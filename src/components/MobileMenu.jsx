@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLogic } from '../context/LogicContext';
-import logo from '../assets/LOGO.SVG';
+import logo from '../assets/LOGO.svg';
 import cancel from '../assets/cancelIcon.svg'
 
 const MobileMenu = () => {

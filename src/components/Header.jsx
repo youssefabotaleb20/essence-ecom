@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLogic } from '../context/LogicContext'
-import logo from '../assets/LOGO.SVG'
+import logo from '../assets/LOGO.svg'
 import searchIcon from '../assets/searchIcon.svg'
 import shoppingBag from '../assets/shoppingBagIcon.svg'
 import menuIcon from '../assets/menuIcon.svg'
