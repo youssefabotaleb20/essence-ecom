@@ -170,11 +170,11 @@ const Store = () => {
                     <div key={product.id} className="relative p-2 md:p-4 hover:scale-102 transition-all duration-300 cursor-pointer" onClick={() => navigateToProduct(product.id)}>
                         <div className="relative w-full" style={{ paddingBottom: '140%' }}>
                             <img
-                                src={`/products_assets/${product.images[0]}`}
+                                src={`${import.meta.env.BASE_URL}products_assets/${product.images[0]}`}
                                 alt=""
                                 className="absolute top-0 left-0 object-cover object-top outline-none border-none select-none w-full h-full bg-gray-500 mb-2 rounded-lg"
-                                onMouseOver={(e) => {e.target.src = `/products_assets/${product.images[1]}`}} 
-                                onMouseOut={(e) => {e.target.src = `/products_assets/${product.images[0]}`}}
+                                onMouseOver={(e) => {e.target.src = `${import.meta.env.BASE_URL}products_assets/${product.images[1]}`}}
+                                onMouseOut={(e) => {e.target.src = `${import.meta.env.BASE_URL}products_assets/${product.images[0]}`}}
                             />
                             <p className="text-white font-helvetica text-center text-subtitle font-light opacity-70 absolute top-0 left-0 bg-black/80 backdrop-blur-xs w-full p-1">
                                 {product.brand}

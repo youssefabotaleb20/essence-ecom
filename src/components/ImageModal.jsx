@@ -31,7 +31,7 @@ const ImageModal = ({ images, currentIndex, onClose }) => {
 
         {/* Image */}
         <img
-          src={`/products_assets/${images[activeIndex]}`}
+          src={`${import.meta.env.BASE_URL}products_assets/${images[activeIndex]}`}
           alt="Product view"
           className="max-h-[98vh] max-w-[98vw] object-contain"
         />

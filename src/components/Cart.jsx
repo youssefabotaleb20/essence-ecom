@@ -158,7 +158,7 @@ const Cart = () => {
               {cartItems.map((item, index) => (
                 <div key={index} className="flex items-start gap-6 bg-[#111111] p-6 rounded-lg relative group hover:bg-[#1a1a1a] transition-colors duration-200">
                     <img
-                        src={item.image ? `/products_assets/${item.image}` : '/products_assets/placeholder.svg'}
+                        src={item.image ? `${import.meta.env.BASE_URL}products_assets/${item.image}` : `${import.meta.env.BASE_URL}products_assets/placeholder.svg`}
                         alt={item.name}
                         className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
                     />

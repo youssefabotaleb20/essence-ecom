@@ -46,7 +46,7 @@ export const LogicProvider = ({ children }) => {
 
     // Fetch products from JSON file
     useEffect(() => {
-        fetch("/products.json")
+        fetch(`${import.meta.env.BASE_URL}products.json`)
         .then((response) => response.json())
         .then((data) => setProducts(data))
         .catch((error) => console.error("Error loading products:", error));
