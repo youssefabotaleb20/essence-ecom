@@ -54,11 +54,11 @@ const SearchBar = () => {
                                     onClick={() => {navigateToProduct(product.id); handleSearchBarToggle()}}
                                 >
                                     <img
-                                        src={`/products_assets/${product.images[0]}`}
+                                        src={`${import.meta.env.BASE_URL}products_assets/${product.images[0]}`}
                                         alt=""
                                         className="h-35 w-25 lg:h-40 lg:w-30 object-cover object-top outline-none border-none rounded-sm my-3 select-none"
-                                        onMouseOver={(e) => {e.target.src = `/products_assets/${product.images[1]}`}}
-                                        onMouseOut={(e) => {e.target.src = `/products_assets/${product.images[0]}`}}
+                                        onMouseOver={(e) => {e.target.src = `${import.meta.env.BASE_URL}products_assets/${product.images[1]}`}}
+                                        onMouseOut={(e) => {e.target.src = `${import.meta.env.BASE_URL}products_assets/${product.images[0]}`}}
                                     />
                                     <div className='flex flex-col justify-start items-start h-full w-full px-1 lg:px-4 py-4'>
                                         <p className="text-white font-helvetica font-light opacity-70 text-lg">{product.brand}</p>

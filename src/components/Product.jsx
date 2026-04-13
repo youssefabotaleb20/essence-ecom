@@ -82,7 +82,7 @@ const Product = () => {
                     {product.images.map((image, index) => (
                     <img
                         key={index}
-                        src={`/products_assets/${image}`}
+                        src={`${import.meta.env.BASE_URL}products_assets/${image}`}
                         alt={`${product.name} - View ${index + 1}`}
                         className="snap-center w-[80vw] md:w-full h-auto object-cover object-center rounded-lg transition-opacity duration-300 hover:opacity-90 flex-shrink-0 cursor-pointer"
                         onClick={() => setSelectedImageIndex(index)}
@@ -226,7 +226,7 @@ const Product = () => {
                 >
                   <div className="relative w-full" style={{ paddingBottom: '140%' }}>
                     <img
-                      src={`/products_assets/${item.images[0]}`}
+                      src={`${import.meta.env.BASE_URL}products_assets/${item.images[0]}`}
                       alt={item.name}
                       className="absolute top-0 left-0 w-full h-full object-cover object-top rounded-lg"
                     />

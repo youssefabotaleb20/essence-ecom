@@ -203,10 +203,10 @@ const Home = () => {
                 onClick={() => navigateToProduct(product.id)}
               >
                 <img
-                  src={`/products_assets/${product.images[0]}`}
+                  src={`${import.meta.env.BASE_URL}products_assets/${product.images[0]}`}
                   alt=""
                   className="w-full h-full object-cover object-top min-h-60 md:min-h-80 outline-none border-none rounded-sm my-3 select-none"
-                  onMouseOver={(e) => {e.target.src = `/products_assets/${product.images[1]}`}} onMouseOut={(e) => {e.target.src = `/products_assets/${product.images[0]}`}}
+                  onMouseOver={(e) => {e.target.src = `${import.meta.env.BASE_URL}products_assets/${product.images[1]}`}} onMouseOut={(e) => {e.target.src = `${import.meta.env.BASE_URL}products_assets/${product.images[0]}`}}
                 />
                 <h3 className="text-white font-helvetica text-center text-subtitle font-bold">
                   {product.name}
