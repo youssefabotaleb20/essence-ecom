@@ -1,0 +1,17 @@
+
+
+<svg width="52px" height="56px" viewBox="0 0 52 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-(Men-Section-Open)" transform="translate(-931, -3351)">
+            <g id="Perks-section" transform="translate(72, 3270)">
+                <g id="Easy-returns" transform="translate(626, 0)">
+                    <g id="Group" transform="translate(233, 81)">
+                        <rect id="Rectangle" x="0" y="0" width="52" height="56"></rect>
+                        <polyline id="Path" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" points="14.0831136 9.333 6.5 16.333 14.0831136 24.4997"></polyline>
+                        <path d="M6.5,16.333 C6.5,16.333 31.40995,16.333 31.40995,16.333 C38.8665643,16.333 45.1989571,22.89013 45.4896,30.9163 C45.7966786,39.3975 39.2893429,46.6663 31.40995,46.6663 C31.40995,46.6663 12.9982636,46.6663 12.9982636,46.6663" id="Path" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

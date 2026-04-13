@@ -1,0 +1,29 @@
+# Enable URL rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Set the base directory for the app
+    RewriteBase /
+
+    # Restrict access to api.php
+    <Files "api.php">
+        # Allow POST requests only
+        RewriteCond %{REQUEST_METHOD} !POST
+        RewriteRule ^ - [F,L]
+
+        # Allow access only from your domain
+        RewriteCond %{HTTP_REFERER} !^https?://(www\.)?unitedgroupeg\.com [NC]
+        RewriteRule ^ - [F,L]
+    </Files>
+
+    # Redirect all other requests to index.html
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.html [L]
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Set custom error pages (optional)
+ErrorDocument 404 /index.html

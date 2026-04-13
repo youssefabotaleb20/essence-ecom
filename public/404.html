@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Essence</title>
+    <script>
+      // Store the full path so index.html can restore it via history.replaceState.
+      // This lets BrowserRouter handle client-side routes on GitHub Pages.
+      sessionStorage.setItem('spa-redirect', location.pathname + location.search + location.hash);
+      location.replace(location.origin + location.pathname.split('/').slice(0, 2).join('/') + '/');
+    </script>
+  </head>
+  <body></body>
+</html>

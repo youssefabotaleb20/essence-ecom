@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Charmonman:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-aref-ruqaa: 'Aref Ruqaa', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-charmonman: 'Charmonman', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-code: ui-code, ui-monospace, SFMono-Regular, Menlo, Monaco;
+  --font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --text-title: clamp(70px, 10vw, 150px);
+  --text-titleTwo: clamp(30px, 10vw, 60px);
+  --text-subtitle: clamp(13px, 2vw, 18px);
+  --text-h2: clamp(20px, 3vw, 30px);
+  --text-p: clamp(14px, 3vw, 20px);
+
+  --gap-ArrivalPopular: clamp(1rem, 3vw, 3rem)
+}
+
+html, body, #ScrollStore {
+  scrollbar-width: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes gradient-move {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+.animate-gradient {
+  animation: gradient-move 20s linear infinite;
+}
+
+main {
+  min-height: 85vh;
+  flex-grow: 1;
+}

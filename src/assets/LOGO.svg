@@ -1,0 +1,16 @@
+
+<svg width="284px" height="82px" viewBox="0 0 284 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="Helvetica-Light, Helvetica" font-weight="300">
+        <g id="Home-(Men-Section-Open)" transform="translate(-86, -49)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="logo" transform="translate(86, 49)">
+                <text id="ESSENCE" font-size="55.0980392" letter-spacing="4.695567">
+                    <tspan x="3" y="53">ESSENCE</tspan>
+                </text>
+                <text id="ONLINE-SHOWROOM" font-size="18" letter-spacing="6.465714">
+                    <tspan x="5.296002" y="78">ONLINE-SHOWROO</tspan>
+                    <tspan x="261.829998" y="78" letter-spacing="-1.12">M</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

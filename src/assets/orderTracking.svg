@@ -1,0 +1,19 @@
+
+<svg width="60px" height="57px" viewBox="0 0 60 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-(Men-Section-Open)" transform="translate(-1558, -3351)" stroke="#FFFFFF" stroke-width="5">
+            <g id="Perks-section" transform="translate(72, 3270)">
+                <g id="Order-Tracking" transform="translate(1252, 0)">
+                    <g id="Group" transform="translate(234, 81)">
+                        <path d="M54,28.998343 C54,41.6988545 43.2548559,52 30.0000524,52 C16.7451441,52 6,41.6988545 6,28.998343 C6,16.2960238 16.7451441,6 30.0000524,6 C43.2548559,6 54,16.2960238 54,28.998343 C54,28.998343 54,28.998343 54,28.998343 Z" id="Path"></path>
+                        <path d="M39,28.4973773 C39,33.1919264 34.9707514,37 30.0000629,37 C25.0293534,37 21,33.1919264 21,28.4973773 C21,23.8049165 25.0293534,20 30.0000629,20 C34.9707514,20 39,23.8049165 39,28.4973773 C39,28.4973773 39,28.4973773 39,28.4973773 Z" id="Path"></path>
+                        <line x1="0" y1="28.5" x2="6" y2="28.5" id="Path" stroke-linecap="round"></line>
+                        <line x1="54" y1="28.5" x2="60" y2="28.5" id="Path" stroke-linecap="round"></line>
+                        <line x1="29.5" y1="6" x2="29.5" y2="0" id="Path" stroke-linecap="round"></line>
+                        <line x1="29.5" y1="57" x2="29.5" y2="51" id="Path" stroke-linecap="round"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
