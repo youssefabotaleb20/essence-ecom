@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "shop": "Shop",
+    "about": "About",
+    "bag": "Bag",
+    "menu": "Menu",
+    "close": "Close",
+    "home": "Home",
+    "skip": "Skip to content"
+  },
+  "lang": {
+    "label": "Language",
+    "en": "English",
+    "es": "Español"
+  },
+  "home": {
+    "heroLine": "Fragrance and skincare with every note and every percentage on the label.",
+    "shopHero": "Shop Salt Fig",
+    "seeAll": "See all twelve",
+    "scrollHint": "Scroll to wear it",
+    "collection": "The collection",
+    "collectionLine": "Six fragrances and six skincare pieces. Every note and every percentage is on the page.",
+    "byNote": "Shop by note",
+    "byNoteLine": "Start from a note you already like.",
+    "discoveryTitle": "Try all six",
+    "discoveryLine": "Six 2 ml vials, one of each fragrance. Wear each one for a day before you choose a full bottle.",
+    "addDiscovery": "Add the discovery set",
+    "houseTitle": "What's in the bottle",
+    "houseLine": "Essence is a small fragrance and skincare house. We list every note and every percentage on the page, so you know what you're putting on your skin.",
+    "aboutLink": "About the house",
+    "openProduct": "View {{name}}",
+    "shopAll": "Shop the collection",
+    "featured": "Featured fragrance"
+  },
+  "filter": {
+    "all": "All",
+    "fragrance": "Fragrance",
+    "skincare": "Skincare",
+    "clear": "clear",
+    "noteActive": "{{note}}, clear"
+  },
+  "stage": {
+    "top": "Top notes, first 15 minutes",
+    "heart": "Heart, the next few hours",
+    "base": "Base, into the evening",
+    "wear": "Wear",
+    "hours": "{{hours}} hours",
+    "topShort": "Top",
+    "heartShort": "Heart",
+    "baseShort": "Base"
+  },
+  "product": {
+    "edp": "Eau de parfum",
+    "size": "Size",
+    "add": "Add to bag",
+    "addWithPrice": "Add to bag, {{price}}",
+    "added": "Added to bag",
+    "keyIngredients": "Key ingredients",
+    "howToUse": "How to use",
+    "suits": "Suits",
+    "showIngredients": "Show full ingredients",
+    "hideIngredients": "Hide full ingredients",
+    "pairs": "Pairs well with",
+    "notes": "Notes",
+    "back": "Back to the shop",
+    "from": "from {{price}}"
+  },
+  "shop": {
+    "title": "Shop",
+    "count_one": "{{count}} item",
+    "count_other": "{{count}} items",
+    "empty": "Nothing in the range has that note yet.",
+    "emptyLink": "See all twelve"
+  },
+  "bag": {
+    "title": "Your bag",
+    "empty": "Your bag is empty. Not sure where to start? Try the discovery set.",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping is calculated at checkout.",
+    "checkout": "Go to checkout",
+    "remove": "Remove",
+    "decrease": "One fewer",
+    "increase": "One more",
+    "quantity": "Quantity",
+    "count": "Bag, {{count}} items"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "demo": "This is a demo checkout. Nothing is charged and nothing ships.",
+    "contact": "Contact",
+    "delivery": "Delivery",
+    "payment": "Payment",
+    "email": "Email",
+    "name": "Full name",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "card": "Card number",
+    "cardHint": "Demo only. Try 4242 4242 4242 4242.",
+    "expiry": "Expiry (MM/YY)",
+    "cvc": "CVC",
+    "summary": "Order summary",
+    "shippingLine": "Shipping",
+    "free": "Free",
+    "total": "Total",
+    "place": "Place order",
+    "placing": "Placing order",
+    "placed": "Order placed",
+    "placedLine": "Thanks, {{name}}. This is a demo, so nothing will ship and no card was charged.",
+    "emptyBag": "Your bag is empty, so there's nothing to check out.",
+    "errors": {
+      "email": "Enter an email address, like name@example.com.",
+      "name": "Enter your full name.",
+      "address": "Enter a street address.",
+      "city": "Enter a city.",
+      "country": "Enter a country.",
+      "card": "Enter a 16-digit card number.",
+      "expiry": "Enter the expiry as MM/YY, like 08/28.",
+      "cvc": "Enter the 3 digits on the back of the card.",
+      "summary": "Check the fields marked below."
+    }
+  },
+  "about": {
+    "title": "The house",
+    "intro": "Most fragrance boxes tell you almost nothing. We print the full pyramid of notes on every bottle and the exact amount of every key ingredient on every jar, because you should be able to choose by what's inside.",
+    "makeTitle": "How we make it",
+    "make1t": "Small batches",
+    "make1": "Each fragrance is mixed in batches of 400 bottles and left to rest for six weeks before it's filled.",
+    "make2t": "Amounts on the label",
+    "make2": "If an ingredient is on the front of a skincare jar, its percentage is next to it.",
+    "make3t": "Refills",
+    "make3": "Every 100 ml bottle unscrews, so it can be refilled instead of thrown away.",
+    "contactTitle": "Write to us",
+    "contactLine": "Questions about a note, an ingredient or an order.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "sent": "Message sent. This is a demo, so it went nowhere.",
+    "errors": {
+      "name": "Enter your name.",
+      "email": "Enter an email address, like name@example.com.",
+      "message": "Write a message first."
+    }
+  },
+  "footer": {
+    "demo": "Essence is a design demo by Youssef Abotaleb. Nothing here is for sale.",
+    "portfolio": "See the portfolio",
+    "contact": "Contact"
+  },
+  "notFound": {
+    "title": "This page doesn't exist.",
+    "line": "It may have moved when the range changed.",
+    "cta": "Go to the shop"
+  }
+}

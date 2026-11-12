@@ -1,69 +1,82 @@
-import { Route, Routes } from "react-router-dom";
-import { LogicProvider } from './context/LogicContext';
-import Header from './components/Header.jsx'
-import Home from './components/Home.jsx'
-import Store from './components/Store.jsx';
-import Product from './components/Product.jsx';
-import Footer from './components/Footer.jsx'
-import NotFound from './components/NotFound.jsx'
-import MobileMenu from './components/MobileMenu.jsx'
-import SearchBar from './components/SearchBar.jsx'
-import ConfirmMessage from "./components/ConfirmMessage.jsx";
-import ErrorMessage from "./components/ErrorMessage.jsx";
-import WelcomeMessage from "./components/WelcomeMessage.jsx";
-import About from "./components/About.jsx";
-import Contact from "./components/Contact.jsx";
-import Cart from "./components/Cart.jsx";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { AnimatePresence, MotionConfig, useReducedMotion } from 'framer-motion';
+import { BagProvider, useBag } from './lib/bag';
+import { useSmoothScroll, getLenis, scrollToTop, scrollToEl } from './lib/smoothScroll';
+import { useFinePointer } from './lib/motion';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import BagDrawer from './components/BagDrawer';
+import Droplet from './components/Droplet';
+import PageVeil from './components/PageVeil';
+import Home from './pages/Home';
+const Shop = lazy(() => import('./pages/Shop'));
+const Product = lazy(() => import('./pages/Product'));
+const Checkout = lazy(() => import('./pages/Checkout'));
+const About = lazy(() => import('./pages/About'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
-function AppContent() {
-  const [isWelcomeMessageDisplayed, setIsWelcomeMessageDisplayed] = useState(() => {
-    return sessionStorage.getItem('welcomeMessageShown') !== 'true';
+function Shell() {
+  const location = useLocation();
+  const reduce = useReducedMotion();
+  const fine = useFinePointer();
+  const bag = useBag();
+  const [intro] = useState(() => {
+    try { const seen = sessionStorage.getItem('essence-intro'); sessionStorage.setItem('essence-intro', '1'); return !seen; } catch { return true; }
   });
+  useSmoothScroll(fine && !reduce);
+
   useEffect(() => {
-    if (!isWelcomeMessageDisplayed) return;
-    setTimeout(() => {
-      const box = document.getElementById('WelcomeBox');
-      if (box) {
-        box.classList.remove('animate__backInDown');
-        box.classList.add('animate__backOutDown');
-      }
-    }, 5000);
-    setTimeout(() => {
-      setIsWelcomeMessageDisplayed(false);
-      sessionStorage.setItem('welcomeMessageShown', 'true');
-    }, 5700);
-  }, [isWelcomeMessageDisplayed]);
+    const l = getLenis();
+    if (!l) return;
+    if (bag.open) l.stop(); else l.start();
+  }, [bag.open]);
+
+  const onExitComplete = () => {
+    if (location.hash) {
+      setTimeout(() => scrollToEl(document.getElementById(location.hash.slice(1))), 80);
+    } else scrollToTop();
+  };
+
+  // same-page hash links (and first load with a hash)
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = setTimeout(() => scrollToEl(document.getElementById(location.hash.slice(1))), 350);
+    return () => clearTimeout(id);
+  }, [location.hash, location.key]);
 
   return (
-    <div className='flex flex-col min-h-screen scroll-smooth select-none'>
-      <Header />
-      <Routes>
-        <Route path={"/"} element={<Home />}></Route>
-        <Route path={"/store/:target"} element={<Store />}></Route>
-        <Route path={"/store"} element={<Store />}></Route>
-        <Route path={"/product/:id"} element={<Product />}></Route>
-        <Route path={"/about"} element={<About />}></Route>
-        <Route path={"/contact"} element={<Contact />}></Route>
-        <Route path={"/cart"} element={<Cart />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
-      <Footer />
-      <MobileMenu />
-      <SearchBar />
-      <ConfirmMessage />
-      <ErrorMessage />
-      {isWelcomeMessageDisplayed && <WelcomeMessage />}
+    <div className="flex min-h-dvh flex-col">
+      <Header intro={intro} />
+      <AnimatePresence mode="wait" onExitComplete={onExitComplete}>
+        <PageVeil key={location.pathname}>
+          <main id="main" className="flex-1">
+            <Suspense fallback={<div className="min-h-[100svh] bg-bg" />}>
+            <Routes location={location}>
+              <Route path="/" element={<Home intro={intro} />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/p/:slug" element={<Product />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+        </PageVeil>
+      </AnimatePresence>
+      <BagDrawer />
+      <Droplet />
     </div>
-  )
+  );
 }
 
-function App() {
+export default function App() {
   return (
-    <LogicProvider>
-      <AppContent />
-    </LogicProvider>
-  )
+    <MotionConfig reducedMotion="user">
+      <BagProvider>
+        <Shell />
+      </BagProvider>
+    </MotionConfig>
+  );
 }
-
-export default App

@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "shop": "Tienda",
+    "about": "La casa",
+    "bag": "Bolsa",
+    "menu": "Menú",
+    "close": "Cerrar",
+    "home": "Inicio",
+    "skip": "Ir al contenido"
+  },
+  "lang": {
+    "label": "Idioma",
+    "en": "English",
+    "es": "Español"
+  },
+  "home": {
+    "heroLine": "Fragancias y cuidado de la piel con cada nota y cada porcentaje en la etiqueta.",
+    "shopHero": "Comprar Salt Fig",
+    "seeAll": "Ver los doce",
+    "scrollHint": "Desliza para llevarlo",
+    "collection": "La colección",
+    "collectionLine": "Seis fragancias y seis productos de cuidado de la piel. Cada nota y cada porcentaje está en la página.",
+    "byNote": "Comprar por nota",
+    "byNoteLine": "Empieza por una nota que ya te guste.",
+    "discoveryTitle": "Prueba las seis",
+    "discoveryLine": "Seis viales de 2 ml, uno de cada fragancia. Lleva cada uno un día antes de elegir un frasco grande.",
+    "addDiscovery": "Añadir el set de descubrimiento",
+    "houseTitle": "Qué hay en el frasco",
+    "houseLine": "Essence es una pequeña casa de fragancias y cuidado de la piel. Indicamos cada nota y cada porcentaje en la página, para que sepas lo que te pones en la piel.",
+    "aboutLink": "Sobre la casa",
+    "openProduct": "Ver {{name}}",
+    "shopAll": "Ver la colección",
+    "featured": "Fragancia destacada"
+  },
+  "filter": {
+    "all": "Todo",
+    "fragrance": "Fragancias",
+    "skincare": "Cuidado de la piel",
+    "clear": "quitar",
+    "noteActive": "{{note}}, quitar"
+  },
+  "stage": {
+    "top": "Notas de salida, primeros 15 minutos",
+    "heart": "Corazón, las siguientes horas",
+    "base": "Fondo, hasta la noche",
+    "wear": "Duración",
+    "hours": "{{hours}} horas",
+    "topShort": "Salida",
+    "heartShort": "Corazón",
+    "baseShort": "Fondo"
+  },
+  "product": {
+    "edp": "Eau de parfum",
+    "size": "Tamaño",
+    "add": "Añadir a la bolsa",
+    "addWithPrice": "Añadir a la bolsa, {{price}}",
+    "added": "Añadido a la bolsa",
+    "keyIngredients": "Ingredientes clave",
+    "howToUse": "Modo de uso",
+    "suits": "Indicado para",
+    "showIngredients": "Ver todos los ingredientes",
+    "hideIngredients": "Ocultar ingredientes",
+    "pairs": "Combina con",
+    "notes": "Notas",
+    "back": "Volver a la tienda",
+    "from": "desde {{price}}"
+  },
+  "shop": {
+    "title": "Tienda",
+    "count_one": "{{count}} producto",
+    "count_other": "{{count}} productos",
+    "empty": "Ningún producto tiene esa nota todavía.",
+    "emptyLink": "Ver los doce"
+  },
+  "bag": {
+    "title": "Tu bolsa",
+    "empty": "Tu bolsa está vacía. ¿No sabes por dónde empezar? Prueba el set de descubrimiento.",
+    "subtotal": "Subtotal",
+    "shipping": "El envío se calcula al pagar.",
+    "checkout": "Ir a pagar",
+    "remove": "Quitar",
+    "decrease": "Uno menos",
+    "increase": "Uno más",
+    "quantity": "Cantidad",
+    "count": "Bolsa, {{count}} productos"
+  },
+  "checkout": {
+    "title": "Pago",
+    "demo": "Este pago es una demo. No se cobra nada y no se envía nada.",
+    "contact": "Contacto",
+    "delivery": "Entrega",
+    "payment": "Pago",
+    "email": "Correo electrónico",
+    "name": "Nombre completo",
+    "address": "Dirección",
+    "city": "Ciudad",
+    "country": "País",
+    "card": "Número de tarjeta",
+    "cardHint": "Solo demo. Prueba 4242 4242 4242 4242.",
+    "expiry": "Caducidad (MM/AA)",
+    "cvc": "CVC",
+    "summary": "Resumen del pedido",
+    "shippingLine": "Envío",
+    "free": "Gratis",
+    "total": "Total",
+    "place": "Realizar pedido",
+    "placing": "Realizando pedido",
+    "placed": "Pedido realizado",
+    "placedLine": "Gracias, {{name}}. Es una demo, así que no se enviará nada ni se ha cobrado ninguna tarjeta.",
+    "emptyBag": "Tu bolsa está vacía, así que no hay nada que pagar.",
+    "errors": {
+      "email": "Escribe un correo, por ejemplo nombre@ejemplo.com.",
+      "name": "Escribe tu nombre completo.",
+      "address": "Escribe una dirección.",
+      "city": "Escribe una ciudad.",
+      "country": "Escribe un país.",
+      "card": "Escribe un número de tarjeta de 16 dígitos.",
+      "expiry": "Escribe la caducidad como MM/AA, por ejemplo 08/28.",
+      "cvc": "Escribe los 3 dígitos del reverso de la tarjeta.",
+      "summary": "Revisa los campos marcados abajo."
+    }
+  },
+  "about": {
+    "title": "La casa",
+    "intro": "La mayoría de las cajas de perfume no dicen casi nada. Nosotros imprimimos la pirámide completa de notas en cada frasco y la cantidad exacta de cada ingrediente clave en cada tarro, porque deberías poder elegir por lo que hay dentro.",
+    "makeTitle": "Cómo lo hacemos",
+    "make1t": "Lotes pequeños",
+    "make1": "Cada fragancia se mezcla en lotes de 400 frascos y reposa seis semanas antes de envasarse.",
+    "make2t": "Cantidades en la etiqueta",
+    "make2": "Si un ingrediente aparece en la parte delantera de un tarro, su porcentaje está al lado.",
+    "make3t": "Recargas",
+    "make3": "Todos los frascos de 100 ml se desenroscan, para recargarlos en vez de tirarlos.",
+    "contactTitle": "Escríbenos",
+    "contactLine": "Preguntas sobre una nota, un ingrediente o un pedido.",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "sent": "Mensaje enviado. Es una demo, así que no ha ido a ninguna parte.",
+    "errors": {
+      "name": "Escribe tu nombre.",
+      "email": "Escribe un correo, por ejemplo nombre@ejemplo.com.",
+      "message": "Escribe un mensaje primero."
+    }
+  },
+  "footer": {
+    "demo": "Essence es una demo de diseño de Youssef Abotaleb. Aquí no se vende nada.",
+    "portfolio": "Ver el portfolio",
+    "contact": "Contacto"
+  },
+  "notFound": {
+    "title": "Esta página no existe.",
+    "line": "Puede que se moviera al cambiar la colección.",
+    "cta": "Ir a la tienda"
+  }
+}
