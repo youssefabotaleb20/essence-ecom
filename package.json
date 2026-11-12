@@ -1,5 +1,5 @@
 {
-  "name": "essence_demo_website",
+  "name": "essence-ecom",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,15 +11,13 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.7",
-    "animate.css": "^4.1.1",
     "framer-motion": "^12.5.0",
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.4",
-    "i18next-http-backend": "^3.0.2",
+    "lenis": "^1.1.20",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.1",
-    "react-icons": "^5.5.0",
     "react-router-dom": "^7.2.0",
     "tailwindcss": "^4.0.7"
   },
@@ -27,8 +25,7 @@
     "@eslint/js": "^9.19.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^1.3.2",
-    "daisyui": "^5.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.19.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.0.0",

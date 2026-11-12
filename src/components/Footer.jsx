@@ -1,116 +1,33 @@
-/* eslint-disable no-unused-vars */
-import logo from '../assets/LOGO.svg'
-import { Link } from 'react-router-dom'
-import searchIcon from '../assets/searchIcon.svg'
-import shoppingBag from '../assets/shoppingBagIcon.svg'
-import { useLogic } from '../context/LogicContext'
-import { useState } from 'react'
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useLang } from '../lib/useLang';
+import LanguageSwitch from './LanguageSwitch';
+import Wordmark from './Wordmark';
 
-const Footer = () => {
-  const { 
-    language, 
-    t, 
-    handleSearchBarToggle, 
-    navigateToHome,
-    displayConfirmationMessageHandler,
-    displayErrorMessageHandler,
-    navigateTo
-  } = useLogic();
-
-  const [email, setEmail] = useState(null);
-
-  const handleEmailSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      displayConfirmationMessageHandler("You will receive emails with out latest offers and news.", "Thank you for subscribing to our newsletter!");
-      setEmail("");
-    } else {
-      displayErrorMessageHandler("Please enter your email address.", "Oops!");
-    }
-  }
-
+export default function Footer() {
+  const { t } = useLang();
   return (
-    <footer className="bg-[#111111] p-6 md:p-10 flex flex-col gap-10">
-      <div className="flex flex-row justify-between items-end">
-        <img src={logo} alt="Essence Logo" className='w-35 md:w-30 lg:w-40 cursor-pointer select-none' onClick={navigateToHome} />
-        <div className="flex flex-row items-center gap-6">
-          <div className="p-1 hover:scale-120 transition-all duration-300 ease-in-out cursor-pointer" onClick={() => {handleSearchBarToggle()}}>
-              <img src={searchIcon} className='w-5 m-1.5'/>
-          </div>
-          <div className="p-1 hover:scale-120 transition-all duration-300 ease-in-out cursor-pointer">
-              <img src={shoppingBag} className='w-5 m-1.5' onClick={() => navigateTo("/cart")} />
-          </div>
+    <footer data-tone="deep" className="grain on-deep gutter overflow-hidden bg-deep pb-10 pt-20 text-deep-ink" style={{ paddingBottom: 'max(40px, env(safe-area-inset-bottom, 0px))' }}>
+      <div className="mx-auto grid max-w-[1280px] gap-14">
+        <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
+          <p className="max-w-[44ch] text-lg text-deep-muted">{t('footer.demo')}{' '}
+            <a href="https://youssefabotaleb20.github.io/Portfolio/" className="text-deep-accent underline underline-offset-4">{t('footer.portfolio')}</a>
+          </p>
+          <nav aria-label="Footer" className="ui flex flex-wrap items-center gap-6 text-sm">
+            <Link to="/shop">{t('nav.shop')}</Link>
+            <Link to="/about">{t('nav.about')}</Link>
+            <Link to="/about#contact">{t('footer.contact')}</Link>
+            <LanguageSwitch />
+          </nav>
         </div>
+        <motion.div
+          initial={{ y: '40%', opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="text-[27vw] leading-[0.78] text-deep-surface md:text-[24vw]" aria-hidden="true"
+        >
+          <Wordmark />
+        </motion.div>
       </div>
-      
-      <div className="flex flex-col sm:flex-row flex-wrap justify-between items-top gap-10 mt-4">
-        <div className="flex flex-col gap-4">
-          <h3 className="text-white text-lg font-medium">{t('shop')}</h3>
-          <ul className="flex flex-col gap-2">
-            <li className="text-white text-sm opacity-70 hover:opacity-100 transition-all duration-300">
-              <Link to="/store" onClick={() => window.scrollTo(0, 0)}>{t('allProducts')}</Link>
-            </li>
-            <li className="text-white text-sm opacity-70 hover:opacity-100 transition-all duration-300">
-              <Link to="/store/men" onClick={() => window.scrollTo(0, 0)}>{t('menStore')}</Link>
-            </li>
-            <li className="text-white text-sm opacity-70 hover:opacity-100 transition-all duration-300">
-              <Link to="/store/women" onClick={() => window.scrollTo(0, 0)}>{t('womenStore')}</Link>
-            </li>
-          </ul>
-        </div>
-        
-        <div className="flex flex-col gap-4 w-fit">
-          <h3 className="text-white text-lg font-medium">{t('about')}</h3>
-          <ul className="flex flex-col gap-2">
-            <li className="text-white text-sm opacity-70 hover:opacity-100 transition-all duration-300">
-              <Link to="/about" onClick={() => window.scrollTo(0, 0)}>{t('ourMission')}</Link>
-            </li>
-            <li className="text-white text-sm opacity-70 hover:opacity-100 transition-all duration-300">
-              <Link to="/about" onClick={() => window.scrollTo(0, 0)}>{t('ourFounder')}</Link>
-            </li>
-          </ul>
-        </div>
-        
-        <div className="flex flex-col gap-4 w-fit">
-          <h3 className="text-white text-lg font-medium">{t('contact')}</h3>
-          <ul className="flex flex-col gap-2">
-            <li className="text-white text-sm opacity-70 hover:opacity-100 transition-all duration-300">
-              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>{t('sendMessage')}</Link>
-            </li>
-            <li className="text-white text-sm opacity-70 hover:opacity-100 transition-all duration-300">
-              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>{t('returnItem')}</Link>
-            </li>
-          </ul>
-        </div>
-        
-        <div className="flex flex-col gap-1">
-          <h3 className="text-white text-lg font-medium mb-2">{t('newsletter')}</h3>
-          <form className="flex flex-col md:flex-row gap-2" onSubmit={(e) => handleEmailSubmit(e)}>
-            <input 
-              type="email" 
-              placeholder={t('emailAddress')}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="bg-transparent border border-white/30 text-white p-2 focus:outline-none focus:border-white transition-all duration-300 w-full md:w-auto flex-grow"
-            />
-            <button type='submit' className="bg-white cursor-pointer text-black px-4 py-2 hover:bg-white/90 transition-all duration-300 w-full md:w-auto">
-              →
-            </button>
-          </form>
-          <p className="text-white/70 text-xs mt-2">Subscribe to receive exclusive offers and updates. Unsubscribe anytime.</p>
-        </div>
-      </div>
-      
-      <div className="h-[1px] w-full bg-white/20 my-4"></div>
-      
-      <div className="flex flex-row justify-between items-center gap-4">
-        <p className="text-white/70 text-sm">Copyright © {new Date().getFullYear()}</p>
-        <p className="text-white/70 text-sm">{t('rights')}</p>
-      </div>
-      
     </footer>
-  )
+  );
 }
-
-export default Footer

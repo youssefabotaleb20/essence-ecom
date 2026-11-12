@@ -1,62 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Charmonman:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
-@plugin "daisyui";
 
+/* Tokens from docs/plan/DESIGN.md. Use these only; no raw hex in components. */
 @theme {
-  --font-aref-ruqaa: 'Aref Ruqaa', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-charmonman: 'Charmonman', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --font-code: ui-code, ui-monospace, SFMono-Regular, Menlo, Monaco;
-  --font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-bg: #E4E9E4;
+  --color-surface: #F1F4F1;
+  --color-mid: #B9C4BC;
+  --color-ink: #1E2B25;
+  --color-muted: #4F5D55;
+  --color-soft: #66756C;
+  --color-accent: #8F5416;
+  --color-deep: #1F3029;
+  --color-deep-surface: #283B33;
+  --color-deep-ink: #E8ECE6;
+  --color-deep-muted: #A9B7AE;
+  --color-deep-accent: #D49A4A;
+  --color-line: #CDD3CD;
+  --color-deep-line: #3A5046;
+  --color-success: #2F6B4A;
+  --color-error: #A3322A;
 
-  --text-title: clamp(70px, 10vw, 150px);
-  --text-titleTwo: clamp(30px, 10vw, 60px);
-  --text-subtitle: clamp(13px, 2vw, 18px);
-  --text-h2: clamp(20px, 3vw, 30px);
-  --text-p: clamp(14px, 3vw, 20px);
+  --font-sans: "Mona Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
 
-  --gap-ArrivalPopular: clamp(1rem, 3vw, 3rem)
+  --text-xs: 13px;
+  --text-sm: 15px;
+  --text-base: 17px;
+  --text-lg: 20px;
+  --text-xl: 26px;
+  --text-2xl: 34px;
+  --text-3xl: 44px;
+  --text-4xl: 60px;
+  --text-5xl: 76px;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --ease-scent: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-html, body, #ScrollStore {
-  scrollbar-width: none;
+@layer base {
+  html { background: var(--color-bg); color: var(--color-ink); -webkit-tap-highlight-color: transparent; }
+  body { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.58; min-height: 100dvh; overflow-x: hidden; }
+  h1, h2, h3, h4 { font-family: var(--font-sans); font-weight: 450; text-wrap: balance; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  ::selection { background: var(--color-deep-accent); color: var(--color-deep); }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 2px; }
+  .on-deep :focus-visible { outline-color: var(--color-deep-accent); }
+  img, svg { max-width: 100%; }
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
+@layer utilities {
+  .narrow { font-stretch: 75%; font-variation-settings: "wdth" 75; }
+  .semi { font-stretch: 88%; font-variation-settings: "wdth" 88; }
+  .ui { font-family: var(--font-sans); font-stretch: 100%; font-weight: 500; }
+  .gutter { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+  @media (min-width: 768px) { .gutter { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
 }
 
-@keyframes marquee-reverse {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+@layer components {
+  /* grain over the deep bands, very light */
+.grain { position: relative; isolation: isolate; }
+.grain::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-@keyframes gradient-move {
-  0% {
-      transform: translateX(100%);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
 }
 
-.animate-gradient {
-  animation: gradient-move 20s linear infinite;
-}
+/* Lenis smooth scroll */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
 
-main {
-  min-height: 85vh;
-  flex-grow: 1;
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee { animation: marquee var(--marquee-duration, 40s) linear infinite; }
+.marquee.reverse { animation-direction: reverse; }
+.marquee-wrap:hover .marquee, .marquee-wrap:focus-within .marquee { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
 }
