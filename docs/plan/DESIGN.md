@@ -39,11 +39,11 @@ No dark mode (Youssef's call); the light-to-dark scroll does that job.
 ## Motion
 Heavy, by Youssef's call on 2026-11-12 ("heavy and creative, well used"). Every effect is tied to the scent idea or to an action:
 - **Wordmark intro:** on the first visit the wordmark condenses from wide to narrow (Mona Sans width axis) and the drop falls into place.
-- **Pour hero:** the screen fills with dark liquid behind a full-width "Essence"; letters under the wave turn fig green, small bottles float and tilt with the surface, bubbles rise, the pointer or a tap makes ripples, and scrolling drains it.
+- **Pour hero:** the screen fills with dark liquid behind a full-width "Essence"; letters under the wave turn fig green, small bottles float and tilt with the surface, bubbles rise, a click or tap makes a soft ripple (the cursor-follow ripples were dropped as too busy), and scrolling drains it.
 - **Name reveal:** product and page names condense letter by letter out of a blur, from wide to narrow.
 - **Accord scroll (the signature):** a sticky stage where the ground moves sage to mid to bottle green, the notes play top, heart, base, each condensing out of a blur, the liquid level drops, and vapour drifts up from the bottle.
 - **Collection index:** on desktop a bottle preview follows the cursor and the row name widens on hover; on phones each row opens as an accordion with the bottle.
-- **Shop by note:** desktop words sharpen and widen on hover; phones get two drifting rows to swipe.
+- **Shop by note:** desktop words sharpen and widen on hover; phones show every note as a chip, all at once (a moving bar was dropped: clients need to see every note together).
 - **Discovery set:** six vials fan out from one stack as the section scrolls in; phones get a swipeable row.
 - **House band:** the sentence reads itself in word by word with scroll.
 - **Add to bag:** a drop of that product's liquid arcs into the bag icon, the badge bumps, then the bag opens.

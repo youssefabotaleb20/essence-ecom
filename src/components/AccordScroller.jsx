@@ -75,7 +75,12 @@ export default function AccordScroller({ product, stages, head, headAside, id, l
       >
         <Vapor active={!reduce} deep={deep} color={product.liquid} />
 
-        <div className="gutter relative mx-auto grid h-full w-full max-w-[1440px] grid-rows-[1fr_auto] pt-20 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:grid-rows-1 md:pt-24">
+        {title && (
+          <div className="gutter absolute inset-x-0 top-0 z-10 mx-auto max-w-[1440px] pt-[76px] md:pt-24">
+            <Link to={titleLink} className="semi font-sans text-lg underline-offset-4 hover:underline md:text-2xl">{title}</Link>
+          </div>
+        )}
+        <div className={`gutter relative mx-auto grid h-full w-full max-w-[1440px] grid-rows-[minmax(0,1fr)_auto] md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:grid-rows-1 ${title ? 'pt-28 md:pt-32' : 'pt-20 md:pt-24'}`}>
           {/* text side */}
           <div className="relative row-start-2 flex min-w-0 flex-col justify-end pb-[max(28px,env(safe-area-inset-bottom,0px))] md:row-start-1 md:justify-center md:pb-16">
             {hasHead && (
@@ -84,10 +89,7 @@ export default function AccordScroller({ product, stages, head, headAside, id, l
               </motion.div>
             )}
 
-            {title && (
-              <Link to={titleLink} className="semi relative z-10 mb-2 justify-self-start font-sans text-xl underline-offset-4 hover:underline md:mb-0 md:text-2xl">{title}</Link>
-            )}
-            <div className="relative min-h-[46svh] md:min-h-[50svh]" aria-live="polite">
+            <div className="relative min-h-[40svh] md:min-h-[50svh]" aria-live="polite">
               <AnimatePresence mode="popLayout">
                 {stage && (
                   <motion.div key={stage.id} className="absolute inset-x-0 bottom-0 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
@@ -150,7 +152,7 @@ export default function AccordScroller({ product, stages, head, headAside, id, l
           {/* bottle side */}
           <div className="pointer-events-none relative row-start-1 flex min-h-0 items-center justify-center md:pointer-events-auto">
             {headAside}
-            <motion.div style={{ scale: artScale, rotate: artRotate }} className="relative h-[38svh] md:h-[72svh]">
+            <motion.div style={{ scale: artScale, rotate: artRotate }} className="relative h-[min(30svh,100%)] md:h-[72svh]">
               <motion.div animate={{ rotateY: tilt.x, rotateX: tilt.y }} transition={{ type: 'spring', stiffness: 80, damping: 15 }} style={{ transformPerspective: 900 }} className="h-full">
                 <motion.div animate={reduce ? undefined : { y: [0, -12, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} className="h-full">
                   <ProductArt product={product} level={level} className="h-full w-auto" title={product.name} />

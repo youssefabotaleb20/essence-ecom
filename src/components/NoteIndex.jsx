@@ -5,7 +5,7 @@ import { NOTES } from '../data/notes';
 import { useLang } from '../lib/useLang';
 import { ease, useIsMobile } from '../lib/motion';
 
-/** Every note in the range as words. Desktop: a field of words that sharpen on hover. Phone: two drifting rows to swipe through. */
+/** Every note in the range as words. Desktop: a field of words that sharpen on hover. Phone: every note as a tappable chip, all visible at once. */
 export default function NoteIndex() {
   const { t, pick } = useLang();
   const mobile = useIsMobile();
@@ -19,22 +19,15 @@ export default function NoteIndex() {
       </div>
 
       {mobile ? (
-        <div className="grid gap-3">
-          {[notes.filter((_, i) => i % 2 === 0), notes.filter((_, i) => i % 2 === 1)].map((row, r) => (
-            <div key={r} className="marquee-wrap overflow-x-auto no-scrollbar">
-              <div className={`marquee flex w-max gap-3 ${r ? 'reverse' : ''}`} style={{ '--marquee-duration': `${46 + r * 8}s` }}>
-                {[...row, ...row].map(([key, slugs], i) => (
-                  <Link
-                    key={`${key}-${i}`} to={`/shop?note=${key}`} tabIndex={i >= row.length ? -1 : 0} aria-hidden={i >= row.length}
-                    className="ui flex items-baseline gap-2 whitespace-nowrap rounded-full border border-line bg-bg px-5 py-3 text-lg"
-                  >
-                    {pick(NOTES[key])}<span className="tabular text-xs text-muted">{slugs.length}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
+        <ul className="gutter flex flex-wrap gap-2">
+          {notes.map(([key, slugs]) => (
+            <li key={key}>
+              <Link to={`/shop?note=${key}`} className="ui flex items-baseline gap-1.5 rounded-full border border-line bg-bg px-4 py-2.5 text-sm active:scale-95 transition-transform">
+                {pick(NOTES[key])}<span className="tabular text-xs text-muted">{slugs.length}</span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       ) : (
         <ul className="gutter mx-auto flex max-w-[1280px] flex-wrap items-baseline gap-x-8 gap-y-2">
           {notes.map(([key, slugs], i) => (

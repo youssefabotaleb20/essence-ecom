@@ -5,7 +5,7 @@ import ProductArt from './ProductArt';
 import Magnetic from './Magnetic';
 import { useLang } from '../lib/useLang';
 import { C } from '../lib/tokens';
-import { ease, useFinePointer } from '../lib/motion';
+import { ease } from '../lib/motion';
 
 /**
  * Home hero. The screen fills with dark liquid behind a full-width "Essence"; where the wave crosses
@@ -17,7 +17,6 @@ const FLOAT = { desktop: [0.64, 0.79, 0.92], mobile: [0.56, 0.74, 0.9] };
 export default function HeroPour({ word, line, bottles, intro }) {
   const { t } = useLang();
   const reduce = useReducedMotion();
-  const fine = useFinePointer();
   const track = useRef(null);
   const stage = useRef(null);
   const waveA = useRef(null);
@@ -31,6 +30,14 @@ export default function HeroPour({ word, line, bottles, intro }) {
   const { scrollYProgress } = useScroll({ target: track, offset: ['start start', 'end start'] });
   const drain = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
   const copyOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+
+  // draw only while the hero is on screen
+  const visible = useRef(true);
+  useEffect(() => {
+    const io = new IntersectionObserver(([e]) => { visible.current = e.isIntersecting; });
+    io.observe(track.current);
+    return () => io.disconnect();
+  }, []);
 
   useEffect(() => {
     const el = stage.current;
@@ -48,24 +55,24 @@ export default function HeroPour({ word, line, bottles, intro }) {
   const { w, h } = size;
   const mobile = w < 768;
   const gutter = mobile ? 20 : 40;
-  const fill = mobile ? 0.56 : 0.46; // share of the screen under the liquid at rest
+  const fill = mobile ? 0.34 : 0.46; // share of the screen under the liquid at rest
   const fontSize = Math.min((w - gutter * 2) / (mobile ? 1.5 : 1.75), h * (mobile ? 0.34 : 0.58));
   const baseline = h * (1 - fill) + fontSize * 0.36;
 
   const surface = (x, time, level) => {
     let y = level
-      + Math.sin(x * 0.006 + time * 1.1) * (mobile ? 7 : 12)
-      + Math.sin(x * 0.017 - time * 1.7) * (mobile ? 3 : 5);
+      + Math.sin(x * 0.005 + time * 0.8) * (mobile ? 6 : 10)
+      + Math.sin(x * 0.013 - time * 1.1) * (mobile ? 2 : 3);
     for (const r of ripples.current) {
       const age = time - r.t;
       const d = Math.abs(x - r.x);
-      y += Math.sin(d * 0.045 - age * 7) * 26 * Math.exp(-age * 1.6) * Math.exp(-d / 220);
+      y += Math.sin(d * 0.045 - age * 7) * 12 * Math.exp(-age * 1.8) * Math.exp(-d / 260);
     }
     return y;
   };
 
   useAnimationFrame((ms) => {
-    if (scrollYProgress.get() >= 1) return; // off screen: stop drawing
+    if (!visible.current) return; // off screen: stop drawing
     const time = reduce ? 0 : ms / 1000;
     ripples.current = ripples.current.filter((r) => time - r.t < 3);
     const level = h - h * fill * pour.get() * drain.get();
@@ -129,7 +136,6 @@ export default function HeroPour({ word, line, bottles, intro }) {
       <div
         ref={stage}
         className="sticky top-0 h-[100svh] overflow-hidden bg-bg"
-        onPointerMove={(e) => fine && addRipple(e.clientX)}
         onPointerDown={(e) => addRipple(e.clientX)}
       >
         <h1 id="hero-name" className="sr-only">{word}</h1>
