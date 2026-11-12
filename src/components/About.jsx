@@ -50,7 +50,7 @@ const About = () => {
 
                 <div className="flex justify-center pt-8">
                     <a 
-                        href="https://linktr.ee/YoussefAbotaleb" 
+                        href="https://youssefabotaleb20.github.io/Portfolio/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="px-8 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition-colors duration-300"
