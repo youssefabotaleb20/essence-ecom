@@ -89,7 +89,7 @@ export default function AccordScroller({ product, stages, head, headAside, id, l
               </motion.div>
             )}
 
-            <div className="relative min-h-[40svh] md:min-h-[50svh]" aria-live="polite">
+            <div className="relative min-h-[36svh] md:min-h-[50svh]" aria-live="polite">
               <AnimatePresence mode="popLayout">
                 {stage && (
                   <motion.div key={stage.id} className="absolute inset-x-0 bottom-0 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
@@ -152,7 +152,7 @@ export default function AccordScroller({ product, stages, head, headAside, id, l
           {/* bottle side */}
           <div className="pointer-events-none relative row-start-1 flex min-h-0 items-center justify-center md:pointer-events-auto">
             {headAside}
-            <motion.div style={{ scale: artScale, rotate: artRotate }} className="relative h-[min(30svh,100%)] md:h-[72svh]">
+            <motion.div style={{ scale: artScale, rotate: artRotate }} className="relative h-[30svh] md:h-[72svh]">
               <motion.div animate={{ rotateY: tilt.x, rotateX: tilt.y }} transition={{ type: 'spring', stiffness: 80, damping: 15 }} style={{ transformPerspective: 900 }} className="h-full">
                 <motion.div animate={reduce ? undefined : { y: [0, -12, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} className="h-full">
                   <ProductArt product={product} level={level} className="h-full w-auto" title={product.name} />
