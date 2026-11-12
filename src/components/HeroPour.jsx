@@ -100,14 +100,28 @@ export default function HeroPour({ word, line, bottles, intro }) {
     if (ripples.current.length > 6) ripples.current.shift();
   };
 
+  // Fit the word to the full width by measuring it, then stretching it with a transform.
+  // (SVG textLength isn't applied the same way in every browser, which clipped the word in Safari.)
+  const measure = useRef(null);
+  const [sx, setSx] = useState(1);
+  useEffect(() => {
+    let alive = true;
+    const fit = () => {
+      const el = measure.current;
+      if (!el || !alive) return;
+      const natural = el.getBBox().width;
+      if (natural > 0) setSx((w - gutter * 2) / natural);
+    };
+    fit();
+    document.fonts?.ready.then(fit);
+    return () => { alive = false; };
+  }, [w, gutter, fontSize, word]);
+
+  const textStyle = { fontFamily: 'var(--font-sans)', fontVariationSettings: '"wdth" 75', fontStretch: '75%', fontWeight: 500 };
   const name = (
-    <text
-      x={w / 2} y={baseline} textAnchor="middle" fontSize={fontSize}
-      textLength={w - gutter * 2} lengthAdjust="spacingAndGlyphs"
-      style={{ fontFamily: 'var(--font-sans)', fontVariationSettings: '"wdth" 75', fontWeight: 500, letterSpacing: '-0.02em' }}
-    >
-      {word}
-    </text>
+    <g transform={`translate(${w / 2} ${baseline}) scale(${sx} 1)`}>
+      <text x="0" y="0" textAnchor="middle" fontSize={fontSize} style={textStyle}>{word}</text>
+    </g>
   );
 
   return (
@@ -130,6 +144,8 @@ export default function HeroPour({ word, line, bottles, intro }) {
               <stop offset="1" stopColor={C.deep} />
             </linearGradient>
           </defs>
+
+          <text ref={measure} x="0" y="-9999" fontSize={fontSize} style={textStyle} opacity="0">{word}</text>
 
           {/* name above the liquid */}
           <motion.g fill={C.ink} initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: intro ? 0.5 : 0.1 }}>{name}</motion.g>
