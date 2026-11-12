@@ -14,7 +14,7 @@
     "es": "Español"
   },
   "home": {
-    "heroLine": "Eau de parfum. Green fig and sea air over dry vetiver.",
+    "heroLine": "Fragrance and skincare with every note and every percentage on the label.",
     "shopHero": "Shop Salt Fig",
     "seeAll": "See all twelve",
     "scrollHint": "Scroll to wear it",
@@ -28,7 +28,9 @@
     "houseTitle": "What's in the bottle",
     "houseLine": "Essence is a small fragrance and skincare house. We list every note and every percentage on the page, so you know what you're putting on your skin.",
     "aboutLink": "About the house",
-    "openProduct": "View {{name}}"
+    "openProduct": "View {{name}}",
+    "shopAll": "Shop the collection",
+    "featured": "Featured fragrance"
   },
   "filter": {
     "all": "All",

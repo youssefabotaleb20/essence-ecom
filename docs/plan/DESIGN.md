@@ -19,6 +19,7 @@ A scent's structure is the layout. Every fragrance page scrolls through its top,
 | deep-ink | #E8ECE6 | Text on deep |
 | deep-muted | #A9B7AE | Secondary text on deep |
 | deep-accent | #D49A4A | Amber on deep |
+| fig | #B9C49A | Hero letters under the liquid |
 | line | #CDD3CD | Hairlines and borders on light |
 States (to confirm contrast in the build): success #2F6B4A, error #A3322A, focus ring = accent (deep-accent on deep).
 
@@ -38,6 +39,7 @@ No dark mode (Youssef's call); the light-to-dark scroll does that job.
 ## Motion
 Heavy, by Youssef's call on 2026-11-12 ("heavy and creative, well used"). Every effect is tied to the scent idea or to an action:
 - **Wordmark intro:** on the first visit the wordmark condenses from wide to narrow (Mona Sans width axis) and the drop falls into place.
+- **Pour hero:** the screen fills with dark liquid behind a full-width "Essence"; letters under the wave turn fig green, small bottles float and tilt with the surface, bubbles rise, the pointer or a tap makes ripples, and scrolling drains it.
 - **Name reveal:** product and page names condense letter by letter out of a blur, from wide to narrow.
 - **Accord scroll (the signature):** a sticky stage where the ground moves sage to mid to bottle green, the notes play top, heart, base, each condensing out of a blur, the liquid level drops, and vapour drifts up from the bottle.
 - **Collection index:** on desktop a bottle preview follows the cursor and the row name widens on hover; on phones each row opens as an accordion with the bottle.

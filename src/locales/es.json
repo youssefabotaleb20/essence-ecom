@@ -14,7 +14,7 @@
     "es": "Español"
   },
   "home": {
-    "heroLine": "Eau de parfum. Higo verde y aire de mar sobre vetiver seco.",
+    "heroLine": "Fragancias y cuidado de la piel con cada nota y cada porcentaje en la etiqueta.",
     "shopHero": "Comprar Salt Fig",
     "seeAll": "Ver los doce",
     "scrollHint": "Desliza para llevarlo",
@@ -28,7 +28,9 @@
     "houseTitle": "Qué hay en el frasco",
     "houseLine": "Essence es una pequeña casa de fragancias y cuidado de la piel. Indicamos cada nota y cada porcentaje en la página, para que sepas lo que te pones en la piel.",
     "aboutLink": "Sobre la casa",
-    "openProduct": "Ver {{name}}"
+    "openProduct": "Ver {{name}}",
+    "shopAll": "Ver la colección",
+    "featured": "Fragancia destacada"
   },
   "filter": {
     "all": "Todo",

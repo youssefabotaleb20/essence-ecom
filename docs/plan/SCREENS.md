@@ -41,7 +41,8 @@ Extra item (not one of the 12): **Discovery set**, six 2 ml vials, one of each f
 Images: drawn SVG bottles in each product's liquid colour (decided at build time, 2026-11-12), so no photo licences are needed.
 
 ## Home
-1. **Hero (Salt Fig as notes).** Large name "Salt Fig"; under it, "Eau de parfum. Green fig and sea air over dry vetiver."; the three note lines (Top: bergamot, pink pepper. Heart: fig leaf, sea salt. Base: vetiver, cedar.). Buttons: "Shop Salt Fig", "See all twelve". The light-to-dark shift begins as you scroll.
+1. **Hero (Pour), changed 2026-11-12 after Youssef found the first hero bland.** A full-width "Essence" with dark liquid filling the lower half of the screen; where the wave crosses the letters they turn fig green. Three small bottles (Orange Blossom Noon, Salt Fig, Black Tea Smoke) float on the surface, bubbles rise, and the pointer or a tap makes ripples. Line: "Fragrance and skincare with every note and every percentage on the label." Buttons: "Shop the collection", "Try all six". The liquid drains as you scroll.
+   Then **Featured fragrance: Salt Fig**, the notes scroll (top, heart, base) with the light-to-dark shift.
 2. **The collection (index list).** Heading "The collection". Filter: All, Fragrance, Skincare. Each row: name, notes (or key ingredient with %), size, price. Hover or tap shows a small image. Row links to the product.
 3. **Shop by note.** Heading "Shop by note". Line: "Start from a note you already like." Every note in the range as plain words; each one opens the shop filtered to it.
 4. **Discovery set.** Heading "Try all six". Copy: "Six 2 ml vials, one of each fragrance. Wear each one for a day before you choose a full bottle." Price $28, button "Add the discovery set".

@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion';
 import ProductArt from './ProductArt';
 import { C } from '../lib/tokens';
@@ -12,7 +13,7 @@ import { ease, useFinePointer } from '../lib/motion';
  * stages: [{ id, label, words: string[], line, big? }]
  * head: optional block shown before the first stage (the home hero); it lifts away as you scroll.
  */
-export default function AccordScroller({ product, stages, head, headAside, id, labelledBy }) {
+export default function AccordScroller({ product, stages, head, headAside, id, labelledBy, title, titleLink }) {
   const track = useRef(null);
   const reduce = useReducedMotion();
   const fine = useFinePointer();
@@ -83,6 +84,9 @@ export default function AccordScroller({ product, stages, head, headAside, id, l
               </motion.div>
             )}
 
+            {title && (
+              <Link to={titleLink} className="semi relative z-10 mb-2 justify-self-start font-sans text-xl underline-offset-4 hover:underline md:mb-0 md:text-2xl">{title}</Link>
+            )}
             <div className="relative min-h-[46svh] md:min-h-[50svh]" aria-live="polite">
               <AnimatePresence mode="popLayout">
                 {stage && (
