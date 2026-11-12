@@ -11,7 +11,7 @@ import { ChevronDown } from './Icons';
 export function FilterTabs({ value, onChange, id = 'filter' }) {
   const { t } = useLang();
   return (
-    <div role="tablist" aria-label={t('nav.shop')} className="ui relative inline-flex rounded-full border border-current/20 p-1 text-sm">
+    <div role="tablist" aria-label={t('nav.shop')} className="ui relative inline-flex justify-self-start self-start rounded-full border border-current/20 p-1 text-sm">
       {['all', 'fragrance', 'skincare'].map((k) => (
         <button
           key={k} role="tab" type="button" aria-selected={value === k} onClick={() => onChange(k)}
